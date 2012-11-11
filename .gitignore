@@ -1,0 +1,6 @@
+*.pyc
+.*.sw?
+build/
+tags
+sparts.egg-info/
+dist/
