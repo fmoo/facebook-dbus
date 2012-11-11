@@ -37,7 +37,7 @@ setup(
                    " graph API over dbus, for the rest of the OS to use"),
     license = "ISC",
     keywords = "facebook sparts service daemon dbus",
-    url = "http://github.com/fmoo/fb_dbus",
+    url = "http://github.com/fmoo/facebook-dbus",
     packages = find_packages(),
     long_description=read_md_as_rest("README.md"),
     install_requires=['keyring',
