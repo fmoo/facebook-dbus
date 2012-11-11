@@ -68,6 +68,13 @@ class FBAccessDBusObject(dbus.service.Object, _TwistedHelper):
                     application_secret, success_cb, error_cb), error_cb)
 
     @dbus.service.method(dbus_interface='org.sparts.fb_dbus.AuthService',
+                         in_signature='ss', out_signature='')
+    def setAppAccessToken(self, application_id, access_token):
+        keyring.set_password('sparts.fb_dbus.app_token',
+                             str(application_id), str(access_token))
+        self.registerAppService(application_id, access_token)
+
+    @dbus.service.method(dbus_interface='org.sparts.fb_dbus.AuthService',
                          in_signature='s', out_signature='s',
                          async_callbacks=('success_cb', 'error_cb'),)
     def getAppAccessToken(self, application_id, success_cb=None, error_cb=None):
