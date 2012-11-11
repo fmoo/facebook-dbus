@@ -1,0 +1,2 @@
+facebook-dbus is a reference implementation of a sparts service that
+exports Facebook's graph API over dbus for other users of the system
